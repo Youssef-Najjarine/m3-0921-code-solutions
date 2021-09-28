@@ -13,7 +13,7 @@ console.log('doubled', doubled);
 const prices = numbers.map(number => `$${number}.00`);
 console.log('prices', prices);
 
-const upperCased = languages.map(language => language[0].toUpperCase() + language.slice(1));
+const upperCased = languages.map(language => language.toUpperCase());
 console.log('upperCased', upperCased);
 
 const firstLetters = languages.map(language => language[0]);
