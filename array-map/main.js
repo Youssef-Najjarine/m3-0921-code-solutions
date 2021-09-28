@@ -10,7 +10,7 @@ const languages = [
 const doubled = numbers.map(number => number * 2);
 console.log('doubled', doubled);
 
-const prices = numbers.map(number => `$${number}.00`);
+const prices = numbers.map(number => `$${Number.parseFloat(number).toFixed(2)}`);
 console.log('prices', prices);
 
 const upperCased = languages.map(language => language.toUpperCase());
