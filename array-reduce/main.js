@@ -35,9 +35,6 @@ const balance = account.reduce(function (previousValue, currentValue) {
 console.log('balance:', balance);
 
 const composite = traits.reduce(function (previousValue, currentValue) {
-  if (previousValue === 0) {
-    return Object.assign(currentValue);
-  }
   return Object.assign(previousValue, currentValue);
-}, initialValue);
+});
 console.log('composite', composite);
