@@ -15,8 +15,10 @@ class CustomButton extends React.Component {
     }));
     if (!this.state.isClicked) {
       this.message = 'Thanks!';
+      return this.message;
     } else {
       this.message = 'Click Me!';
+      return this.message;
     }
   }
 
