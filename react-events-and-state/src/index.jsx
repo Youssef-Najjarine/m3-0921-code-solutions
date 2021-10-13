@@ -29,12 +29,7 @@ class CustomButton extends React.Component {
 
   }
 }
-
-const element = (
-    <CustomButton/>
-);
-
 ReactDOM.render(
-  element,
+  <CustomButton/>,
   document.getElementById('root')
 );
