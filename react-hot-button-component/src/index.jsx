@@ -13,23 +13,25 @@ class HotButton extends React.Component {
     this.setState({ incrementor: click + 1 });
   }
 
+  getClassName() {
+    return this.state.incrementor === 3
+      ? 'blue'
+      : this.state.incrementor === 6
+        ? 'lightBlue'
+        : this.state.incrementor === 9
+          ? 'red'
+          : this.state.incrementor === 12
+            ? 'orange'
+            : this.state.incrementor === 15
+              ? 'yellow'
+              : this.state.incrementor === 18
+                ? 'white'
+                : 'none';
+  }
+
   render() {
     return (
-      <button className={
-        this.state.incrementor === 3
-          ? 'blue'
-          : this.state.incrementor === 6
-            ? 'lightBlue'
-            : this.state.incrementor === 9
-              ? 'red'
-              : this.state.incrementor === 12
-                ? 'orange'
-                : this.state.incrementor === 15
-                  ? 'yellow'
-                  : this.state.incrementor === 18
-                    ? 'white'
-                    : 'none'
-      } onClick={this.handleClick}>Hot Button</button>
+      <button className={this.getClassName()} onClick={this.handleClick}>Hot Button</button>
     );
   }
 }
