@@ -1,0 +1,46 @@
+section {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  width: 160px;
+  cursor: pointer;
+  height: 80px;
+  border-radius: 40px;
+  border-color: black;
+}
+
+.grey {
+  background: rgb(211, 211, 211);
+}
+
+.green {
+  background: green;
+}
+
+label {
+  margin-left: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+span {
+  cursor: pointer;
+  height: 78px;
+  width: 80px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.dotOff {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+}
+
+.dotOn {
+  position: absolute;
+  top: 9px;
+  left: 86px;
+}
