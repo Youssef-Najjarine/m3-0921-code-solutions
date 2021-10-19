@@ -1,0 +1,28 @@
+button {
+  padding: 10px 30px;
+  font-size: 25px;
+}
+
+button.blue {
+  background-color: blue;
+}
+
+button.lightBlue {
+  background-color: lightblue;
+}
+
+button.red {
+  background-color: red;
+}
+
+button.orange {
+  background-color: orange;
+}
+
+button.yellow {
+  background-color: yellow;
+}
+
+button.white {
+  background-color: white;
+}
