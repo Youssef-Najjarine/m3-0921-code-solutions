@@ -1,0 +1,31 @@
+#container {
+  max-width: 900px;
+  margin: 10% auto;
+}
+
+#buttonsAndText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+button {
+  background-color: gainsboro;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: start;
+  padding: 10px;
+  margin-bottom: 1px;
+  border-radius: 10px;
+}
+
+p {
+  margin: 0;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
