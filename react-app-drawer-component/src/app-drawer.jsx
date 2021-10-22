@@ -27,9 +27,13 @@ class AppDrawer extends React.Component {
   render() {
     return (
       <div>
+        <div className='navButton'>
         <i onClick={this.handleModalTurnOn} className="fas fa-align-justify"></i>
+          </div>
         <div className="container">
-          <i className="fab fa-earlybirds"></i>
+          <div className='bird'>
+            <i className="fab fa-earlybirds"></i>
+          </div>
         </div>
 
         <div onClick={this.handleModalTurnOff} className={this.handleModalDisplay()}>

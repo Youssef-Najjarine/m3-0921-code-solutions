@@ -5,19 +5,17 @@
   justify-content: center;
 }
 
-.fa-align-justify,
+.navButton,
 li {
   cursor: pointer;
 }
 
-.fa-align-justify {
-  margin-left: 30px;
+.navButton {
+  margin: 10px;
   font-size: 50px;
 }
 
-.fa-earlybirds {
-  margin-left: 100px;
-  margin-top: 100px;
+.bird {
   font-size: 600px;
 }
 
