@@ -1,19 +1,19 @@
-#container {
+.container {
   max-width: 900px;
   margin: 10% auto;
 }
 
-#buttonsAndText {
+.buttonsAndText {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
 button {
+  width: 100%;
   background-color: gainsboro;
   cursor: pointer;
   font-size: 30px;
-  text-align: start;
   padding: 10px;
   margin-bottom: 1px;
   border-radius: 10px;
