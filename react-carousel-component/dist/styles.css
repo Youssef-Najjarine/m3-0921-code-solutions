@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+img {
+  width: 300px;
+}
+
+#container {
+  max-width: 900px;
+  margin: 10% auto;
+}
+
+#row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#column-third {
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 80px;
+  cursor: pointer;
+}
+
+.fa-circle {
+  margin: 5px;
+  font-size: 30px;
+  cursor: pointer;
+}
