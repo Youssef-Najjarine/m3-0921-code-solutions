@@ -11,29 +11,33 @@ img {
   width: 300px;
 }
 
-#container {
+.hidden {
+  display: none;
+}
+
+.container {
   max-width: 900px;
   margin: 10% auto;
 }
 
-#row {
+.row {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#column-third {
+.column-third {
   width: calc(100% / 3);
   text-align: center;
 }
 
-.fa-angle-left,
-.fa-angle-right {
+.angle-Left,
+.angle-Right {
   font-size: 80px;
   cursor: pointer;
 }
 
-.fa-circle {
+.circles {
   margin: 5px;
   font-size: 30px;
   cursor: pointer;
