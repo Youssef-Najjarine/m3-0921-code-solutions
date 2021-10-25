@@ -1,0 +1,57 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.navButton,
+li {
+  cursor: pointer;
+}
+
+.navButton {
+  margin: 10px;
+  font-size: 50px;
+}
+
+.bird {
+  font-size: 600px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.blackBox {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+}
+
+.whiteBox {
+  background-color: white;
+  padding: 0 120px 120px 60px;
+}
+
+.hidden {
+  display: none;
+}
