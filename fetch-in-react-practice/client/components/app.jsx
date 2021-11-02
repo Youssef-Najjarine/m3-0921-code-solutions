@@ -82,7 +82,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const newArray = this.state.todos;
+        const newArray = this.state.todos.slice();
         newArray[index] = data;
         this.setState({ todos: newArray });
       })
