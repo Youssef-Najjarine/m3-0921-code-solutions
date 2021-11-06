@@ -47,7 +47,6 @@ app.post('/api/auth/sign-in', (req, res, next) => {
   if (!username || !password) {
     throw new ClientError(401, 'invalid login');
   }
-
   /* your code starts here */
   const sql = `SELECT "userId",
                       "hashedPassword",
@@ -78,7 +77,6 @@ app.post('/api/auth/sign-in', (req, res, next) => {
             return res.status(200).send(token);
           }
         });
-
     }
   });
   /**
