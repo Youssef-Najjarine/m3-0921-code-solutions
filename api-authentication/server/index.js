@@ -48,37 +48,57 @@ app.post('/api/auth/sign-in', (req, res, next) => {
     throw new ClientError(401, 'invalid login');
   }
   /* your code starts here */
-  const sql = `SELECT "userId",
-                      "hashedPassword",
-                      "username"
-                 from "users"
-                 where "username" = '${username}'`;
-  db.query(sql, (err, res2) => {
-    const { hashedPassword, userId, username } = res2.rows[0];
-    if (err) {
-      throw new ClientError(500, 'database quering failed.');
-    } else if (!res2.rows[0]) {
-      throw new ClientError(401, 'invalid login');
-    } else {
-      argon2
+  const sql = `
+  SELECT "userId",
+         "hashedPassword"
+    from "users"
+   where "username" = $1
+   `;
+  const params = [username];
+  db.query(sql, params)
+    .then(res2 => {
+      const [user] = res2.rows;
+      if (!user) {
+        throw new ClientError(401, 'invalid login');
+      }
+      const { userId, hashedPassword } = user;
+      return argon2
         .verify(hashedPassword, password)
         .then(isMatching => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
-          } else if (isMatching) {
-            const payload = {
-              userId: userId,
-              username: username
-            };
-            const token = {
-              token: jwt.sign(payload, process.env.TOKEN_SECRET),
-              user: payload
-            };
-            return res.status(200).send(token);
           }
+          const payload = { userId, username };
+          const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+          res.status(200).send({ token, user: payload });
         });
-    }
-  });
+    })
+    .catch(err => next(err));
+  //   const { hashedPassword, userId, username } = res2.rows[0];
+  //   if (err) {
+  //     throw new ClientError(500, 'database quering failed.');
+  //   } else if (!res2.rows[0]) {
+  //     throw new ClientError(401, 'invalid login');
+  //   } else {
+  //     argon2
+  //       .verify(hashedPassword, password)
+  //       .then(isMatching => {
+  //         if (!isMatching) {
+  //           throw new ClientError(401, 'invalid login');
+  //         } else if (isMatching) {
+  //           const payload = {
+  //             userId: userId,
+  //             username: username
+  //           };
+  //           const token = {
+  //             token: jwt.sign(payload, process.env.TOKEN_SECRET),
+  //             user: payload
+  //           };
+  //           return res.status(200).send(token);
+  //         }
+  //       });
+  //   }
+  // });
   /**
    * Query the database to find the "userId" and "hashedPassword" for the "username".
    * Then, 😉
@@ -96,7 +116,6 @@ app.post('/api/auth/sign-in', (req, res, next) => {
    *      Catch any error.
    * Catch any error.
    */
-
 });
 
 app.use(errorMiddleware);
