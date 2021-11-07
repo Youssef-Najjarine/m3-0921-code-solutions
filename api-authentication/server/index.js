@@ -74,31 +74,6 @@ app.post('/api/auth/sign-in', (req, res, next) => {
         });
     })
     .catch(err => next(err));
-  //   const { hashedPassword, userId, username } = res2.rows[0];
-  //   if (err) {
-  //     throw new ClientError(500, 'database quering failed.');
-  //   } else if (!res2.rows[0]) {
-  //     throw new ClientError(401, 'invalid login');
-  //   } else {
-  //     argon2
-  //       .verify(hashedPassword, password)
-  //       .then(isMatching => {
-  //         if (!isMatching) {
-  //           throw new ClientError(401, 'invalid login');
-  //         } else if (isMatching) {
-  //           const payload = {
-  //             userId: userId,
-  //             username: username
-  //           };
-  //           const token = {
-  //             token: jwt.sign(payload, process.env.TOKEN_SECRET),
-  //             user: payload
-  //           };
-  //           return res.status(200).send(token);
-  //         }
-  //       });
-  //   }
-  // });
   /**
    * Query the database to find the "userId" and "hashedPassword" for the "username".
    * Then, 😉
