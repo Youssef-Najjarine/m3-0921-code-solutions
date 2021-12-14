@@ -1,0 +1,11 @@
+In App.jsx on line 60 contextValue is being saved as an object with  user, route, handleSignIn, handleSignOut inside it.
+Then on line 62 the contextValue object is being saved to the component tree so it can be accessed by all other components if need be.
+
+For User can sign up...
+-Once the Register button is clicked, a fetch request is made to '/api/auth/sign-up' which POSTS the username and password into the database.
+
+For User can sign-in...
+-When the Log In button is clicked, the handleSignIn function is accessed through the contextValue of AppContext.Provider. Then a fetch request is made to find if the username and password exist in the database. If the user is found in the database, the token for the user is saved to localstorage. So even if the page is refreshed it will keep the user signed in.
+
+For User can sign-out...
+-When the Sign out button is clicked, the handleSignOut function is accessed through the contextValue of AppContext.Provider.Then the token is cleared from local storage which brings the user back to the Sign In page.
